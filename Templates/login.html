@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Login-AMIR Labs
+{% endblock %}
+{% block content %}
+    <div class="" >
+
+        <div class="row"style="width:100%;height:auto">
+
+            <div class="column" style="background-color:#283e3e;width:47.35%">
+           <div class="text-center" style="padding-top:50px">
+               <div class="custom-Title2" style="color:black">Sign In<br><br></div>
+                <form action="{% url 'Credential:userLogin' %}" method="post" autocomplete="on" >
+                    {% csrf_token %}
+        <!--Username-->
+    		<div class="box">
+          <label class="fl fontLabel"> Username: </label>
+    			<div class="new iconBox">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </div>
+    			<div class="fr">
+    					<input type="text" name="Username" placeholder="Userame"
+              class="textBox" autofocus="on" required>
+    			</div>
+    			<div class="clr"></div>
+    		</div>
+    		<!--name-->
+
+
+
+
+
+    		<!---Password------>
+    		<div class="box">
+          <label class="fl fontLabel"> Password </label>
+    			<div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
+    			<div class="fr">
+    					<input type="Password" required name="password" placeholder="Password" class="textBox">
+    			</div>
+    			<div class="clr"></div>
+    		</div>
+    		<!---Password---->
+
+                    {% for msg in messages %}
+                    <div class="box" style="color:red">
+                        {{ msg}}
+                    </div>
+                    {% endfor %}
+
+
+
+
+
+
+
+    		<!---Submit Button------>
+    		<div class="box" style="background: #2d3e3f">
+    				<input type="Submit" name="Submit" class="submit" value="Login">
+    		</div>
+    		<!---Submit Button----->
+      </form>
+           </div>
+        </div>
+
+        <div class="col-md-6">
+            <div>
+                <img src="{% static 'img/personal robot.jpg' %}">
+            </div>
+        </div>
+        </div>
+
+
+    </div>
+
+
+{% endblock %}

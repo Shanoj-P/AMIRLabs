@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Register-AMIR Labs
+{% endblock %}
+{% block content %}
+<div class="" >
+    <div class="row" style="width:100%;height:auto">
+        <div class="column"style="width:50%">
+            <div>
+                <img src="{% static 'img/drone-robot.jpg' %}">
+            </div>
+        </div>
+        <div class="col-md-6" style="background-color:#283e3e">
+           <div class="text-center" style="padding-top:50px">
+               <div class="custom-Title2" style="color:black"> Add Project<br><br></div>
+                <form action="{% url 'feedsApp:addProject' %}" method="Post" autocomplete="on" style="padding-left:100px">
+					{% csrf_token %}
+        <!--name-->
+    		<div class="box">
+          <label class="fl fontLabel"> Title: </label>
+    			<div class="new iconBox">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </div>
+    			<div class="fr">
+    					<input type="text" name="Title" Title="Firstame"
+              class="textBox" autofocus="on" required>
+    			</div>
+    			<div class="clr"></div>
+    		</div>
+    		<!--name-->
+
+					<div class="box">
+          <label  class="fl fontLabel"> Descrition </label>
+    			<div class="fl iconBox"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
+    			<div class="fr">
+    					<input type="text" required name="description"  placeholder="Description" class="textBox">
+    			</div>
+    			<div class="clr"></div>
+    		</div>
+
+
+
+
+    		<!---Password1------>
+    		<div class="box">
+          <label class="fl fontLabel"> Image</label>
+    			<div class="fl iconBox"><i class="fa-regular fa-images" aria-hidden="true"></i></div>
+
+    			<div class="fr">
+    					<input type="file" name="project_img" class="textBox">
+    			</div>
+    			<div class="clr"></div>
+    		</div>
+    		<!---Password---->
+					<div class="box" style="color:red">
+
+    			{% for msg in messages %}
+					{{msg}}
+					{% endfor %}
+    		</div>
+
+
+
+    		<!---Submit Button------>
+    		<div class="box" style="background: #2d3e3f">
+    				<input type="Submit" name="addProject" class="submit" value="Submit">
+    		</div>
+    		<!---Submit Button----->
+      </form>
+           </div>
+        </div>
+
+
+    </div>
+
+</div>
+{% endblock %}

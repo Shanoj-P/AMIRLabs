@@ -1,0 +1,62 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-color">
+  <a class="navbar-brand" href="#"><img class="custom-logo" src="{% static 'img/logo.png' %}"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="mx-auto custom-Title2">
+			Advanced Machine Intelligence Robotics Labs
+		</div>
+
+  <div class="collapse navbar-collapse ml-auto"style="padding-right:20px" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto custom-text">
+
+      {% if page == 'feed' or page == 'profile' or page == 'add' %}
+      <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn"style="background-color:black" type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #ff5900;"></i></i></button>
+    </form>
+      {% endif %}
+
+      <li class="nav-item active">
+        {% if page == 'feed'  %}
+        <a class="nav-link" href="{% url 'feedsApp:profile' %}">Welcome {{user.first_name}} <span class="sr-only">(current)</span></a>
+        {% endif %}
+      </li>
+
+      <li class="nav-item active">
+        {% if page == 'profile' or page == 'add' %}
+        <a class="nav-link" href="{% url 'feedsApp:home' %}">Explore <span class="sr-only">(current)</span></a>
+        {% endif %}
+      </li>
+
+
+
+      <li class="nav-item active">
+        {% if page == 'feed' or page == 'profile' or page == 'add' %}
+        <a class="nav-link" href="/">Logout <span class="sr-only">(current)</span></a>
+        {% endif %}
+      </li>
+
+      <li class="nav-item active">
+        {% if page == 'login' or page == 'register' %}
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        {% endif %}
+      </li>
+      <li class="nav-item active">
+        {% if page == 'login' or page == 'home' %}
+        <a class="nav-link" href="/register/">Regiser <span class="sr-only">(current)</span></a>
+        {% endif %}
+
+
+      </li>
+      <li class="nav-item active">
+        {% if page == 'register' or page == 'home' %}
+        <a class="nav-link" href="/login/">Login</a>
+        {% endif %}
+      </li>
+      </ul>
+
+  </div>
+</nav>

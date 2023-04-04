@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Home-AMIR Labs
+{% endblock %}
+{% block content %}
+
+<div class="" style="background-color:#d9d9d9">
+    <div class="" style="padding:40px;background-color:black;height:auto;width:100%;">
+    <div class="row">
+        <div class="column" style="background-color: white;width: 70%;height: auto;padding: 20px;padding-left:60px;border-radius:25px">
+        {% for i in project %}
+        <div class="container">
+            <div style="background-color:#d9d9d9" >
+            Posted by: {{i.author}}
+        </div>
+        <div class="custom-Title2" style="color:black">
+            {{i.title}}
+        </div><br>
+        <div class="row">
+            <div class="column container" style="width:50%">
+                <a href="{{i.get_url}}"><img  src="{{i.images.url}}" alt="not available" height="400px" width="400px"></a>
+            </div>
+            <div class="column container " style="width:50%; text-align: justify;">{{i.desc}}</div>
+
+        </div>
+        </div><br><br>
+        {% endfor %}
+    </div>
+        <div style="width:2%"> </div>
+        <div class="column"style="width:28%;background-color:white;height: auto;padding: 20px;border-radius:25px">
+            <div class="text-center" style="background-color:#f2f2f2;color:black">{{projectid.title}}</div>
+            {% for c in cmmt %}
+            <div>
+                {{c.owner}}: {{c.cmt}}
+            </div>
+            {% endfor %}
+            <div class="row">
+                <div class=" container column" style="position: fixed;bottom: 0;width: 100%;height:60px;">
+                    {% if projectid %}
+                <form method="post" action="{% url 'feedsApp:addCmt' projectid.id %}">
+                    {% csrf_token %}
+                    <input class="text-center" type="text" name="comment" placeholder="type here..." size="27%" style="border-radius:10px">
+                          <button class="btn"style="background-color:black" type="submit"><i class="fa-solid fa-paper-plane" style="color: #ff6600;"></i></button>
+
+
+                </form>
+                    {% endif %}
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+</div><br>
+</div>
+
+
+
+
+{% endblock %}

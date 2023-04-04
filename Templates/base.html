@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Labrada:ital,wght@0,500;1,200&family=Prompt:wght@500&display=swap" rel="stylesheet">
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div style="background-color:#283e3e">
+    {% include 'navbar.html' %}
+    {% block content %}
+    {% endblock %}
+</div>
+{% include 'footer.html' %}
+</body>
+</html>

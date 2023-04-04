@@ -1,0 +1,159 @@
+.custom-logo{
+    height:120px;
+    width:auto;
+}
+.custom-color{
+    background-color:black;
+}
+
+
+.custom-size{
+    height: 600px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
+.center {
+  text-align: center;
+  padding-top:250px;
+}
+
+.custom-Title1{
+    font-size: 60px;
+    color: white;
+}
+
+.custom-Title2{
+    font-size: 25px;
+    color: white;
+}
+
+.custom-text{
+    font-size: 18px;
+    color: white;
+}
+
+.custom-footer{
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height:30px;
+    background-color: #ff6600;
+
+}
+
+
+body{
+    font-family: 'Prompt'
+}
+
+.corners {
+  border-radius: 15px;
+  border: 2px solid #ff6600;
+  padding: 20px;
+  padding-left:30px
+  width: 300px;
+  height: 25px;
+}
+
+
+
+
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+  background: url(http://wrbbradio.org/wp-content/uploads/2016/10/grey-background-07.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+
+
+
+
+.fl{
+	float: left;
+  width: 110px;
+  line-height: 35px;
+}
+
+.fontLabel{
+  color: white;
+}
+
+.fr{
+	float: right;
+}
+
+.clr{
+	clear: both;
+}
+
+.box{
+	width: 500px;
+	height: 35px;
+	margin-top: 10px;
+	font-family: verdana;
+	font-size: 12px;
+}
+
+.textBox{
+	height: 35px;
+	width: 350px;
+	border: none;
+  padding-left: 20px;
+}
+
+.new{
+  float: left;
+}
+
+.iconBox{
+	height: 35px;
+	width: 40px;
+	line-height: 38px;
+	text-align: center;
+  background: #ff6600;
+}
+
+.radio{
+	color: white;
+	background: #2d3e3f;
+	line-height: 38px;
+}
+
+.terms{
+	line-height: 35px;
+	text-align: center;
+	background: #2d3e3f;
+	color: white;
+}
+
+.submit{
+	float: right;
+	border: none;
+	color: white;
+	width: 110px;
+	height: 35px;
+	background: #ff6600;
+	text-transform: uppercase;
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+
+}
+
+
+.custom-feed{
+    width: 70%;
+    height: auto;
+    background-color: white;
+    padding: 20px;
+}
+.custom-image{
+    height: 100px;
+    width: 100px;
+}

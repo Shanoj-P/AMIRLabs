@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Register-AMIR Labs
+{% endblock %}
+{% block content %}
+<div class="" >
+    <div class="row" style="width:100%;height:auto">
+        <div class="column"style="width:50%">
+            <div>
+                <img src="{% static 'img/drone-robot.jpg' %}">
+            </div>
+        </div>
+        <div class="col-md-6" style="background-color:#283e3e">
+           <div class="text-center" style="padding-top:50px">
+               <div class="custom-Title2" style="color:black">Sign Up<br><br></div>
+                <form action="{% url 'Credential:registerUser' %}" method="post" autocomplete="on" style="padding-left:100px">
+					{% csrf_token %}
+        <!--name-->
+    		<div class="box">
+          <label class="fl fontLabel"> Firstname: </label>
+    			<div class="new iconBox">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </div>
+    			<div class="fr">
+    					<input type="text" name="Firstname" placeholder="Firstame"
+              class="textBox" autofocus="on" required>
+    			</div>
+    			<div class="clr"></div>
+    		</div>
+    		<!--name-->
+
+					<div class="box">
+          <label  class="fl fontLabel"> Last Name </label>
+    			<div class="fl iconBox"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
+    			<div class="fr">
+    					<input type="text" required name="Lastname" maxlength="10" placeholder="Last Name" class="textBox">
+    			</div>
+    			<div class="clr"></div>
+    		</div>
+
+        <!--User name-->
+    		<div class="box">
+          <label class="fl fontLabel"> Username: </label>
+    			<div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
+    			<div class="fr">
+    					<input type="text" required name="Username"
+              placeholder="Username" class="textBox">
+    			</div>
+    			<div class="clr"></div>
+    		</div>
+    		<!--username-->
+
+
+    		<!---Phone No.------>
+
+    		<!---Phone No.---->
+
+
+    		<!---Email ID---->
+    		<div class="box">
+          <label class="fl fontLabel"> Email ID: </label>
+    			<div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+    			<div class="fr">
+    					<input type="email" required name="email" placeholder="Email Id" class="textBox">
+    			</div>
+    			<div class="clr"></div>
+    		</div>
+    		<!--Email ID----->
+
+
+    		<!---Password------>
+    		<div class="box">
+          <label class="fl fontLabel"> Password </label>
+    			<div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
+    			<div class="fr">
+    					<input type="Password" required name="password" placeholder="Password" class="textBox">
+    			</div>
+    			<div class="clr"></div>
+    		</div>
+    		<!---Password---->
+
+
+    		<!---Password1------>
+    		<div class="box">
+          <label class="fl fontLabel"> Confirm Password </label>
+    			<div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
+    			<div class="fr">
+    					<input type="Password" required name="Cpassword" placeholder="Confirm Password" class="textBox">
+    			</div>
+    			<div class="clr"></div>
+    		</div>
+    		<!---Password---->
+					<div class="box" style="color:red">
+
+    			{% for msg in messages %}
+					{{msg}}
+					{% endfor %}
+    		</div>
+
+
+
+
+
+
+
+
+
+
+    		<!---Submit Button------>
+    		<div class="box" style="background: #2d3e3f">
+    				<input type="Submit" name="Submit" class="submit" value="Register">
+    		</div>
+    		<!---Submit Button----->
+      </form>
+           </div>
+        </div>
+
+
+    </div>
+
+</div>
+{% endblock %}
