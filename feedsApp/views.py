@@ -9,9 +9,9 @@ def feed(request):
 
     return render(request, 'feeds.html', {'project': project, 'page': 'feed'})
 
-def showCmt(request,slug):
+def showCmt(request, slug):
     try:
-        project = Project.objects.all
+        project = reversed(Project.objects.all())
         projectid = Project.objects.get(slug=slug)
         cmmt = Comment.objects.all().filter(project=projectid)
     except Exception as e:
@@ -21,7 +21,7 @@ def showCmt(request,slug):
 
 def addCmt(request, id):
     print('urlllllllllll')
-    project = Project.objects.all
+    project = reversed(Project.objects.all())
     projectid = Project.objects.get(id=id)
     if request.method == 'POST':
         projectid = projectid
@@ -35,7 +35,7 @@ def addCmt(request, id):
 
 
 def profile(request):
-    projectid = Project.objects.all().filter(author=request.user)
+    projectid = reversed(Project.objects.all().filter(author=request.user))
     return render(request, 'profile page.html', {'page': 'profile', 'projects':projectid})
 
 def add(request):

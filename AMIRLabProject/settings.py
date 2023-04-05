@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'fontawesomefree',
+
     'amirlabAPP',
     'Credential',
     'feedsApp',
