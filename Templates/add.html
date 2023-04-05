@@ -14,7 +14,7 @@ Register-AMIR Labs
         <div class="col-md-6" style="background-color:#283e3e">
            <div class="text-center" style="padding-top:50px">
                <div class="custom-Title2" style="color:black"> Add Project<br><br></div>
-                <form action="{% url 'feedsApp:addProject' %}" method="Post" autocomplete="on" style="padding-left:100px">
+                <form action="{% url 'feedsApp:addProject' %}" method="Post" enctype="multipart/form-data" autocomplete="on" style="padding-left:100px">
 					{% csrf_token %}
         <!--name-->
     		<div class="box">
@@ -48,7 +48,7 @@ Register-AMIR Labs
     			<div class="fl iconBox"><i class="fa-regular fa-images" aria-hidden="true"></i></div>
 
     			<div class="fr">
-    					<input type="file" name="project_img" class="textBox">
+    					<input type="file" name="img" class="textBox">
     			</div>
     			<div class="clr"></div>
     		</div>

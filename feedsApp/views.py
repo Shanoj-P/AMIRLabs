@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.utils.text import slugify
 
-from .models import Project,Comment
+from .form import ProjectForm
+from .models import Project, Comment
 
 def feed(request):
-    project = Project.objects.all
+    project = reversed(Project.objects.all())
+
     return render(request, 'feeds.html', {'project': project, 'page': 'feed'})
 
 def showCmt(request,slug):
@@ -37,13 +39,14 @@ def profile(request):
     return render(request, 'profile page.html', {'page': 'profile', 'projects':projectid})
 
 def add(request):
+
     return render(request, 'add.html', {'page': 'add'})
 
 def addProject(request):
     if request.method == 'POST':
         title = request.POST['Title']
         desc = request.POST['description']
-        img = request.FILES['project_img']
+        img = request.FILES['img']
         author = request.user
         slug = slugify(title)
 
